@@ -106,20 +106,50 @@
       align-items: center;
       text-decoration: none;
     }
-    .glass-logo {
+    .logo-reflect {
+  position: relative;
   display: inline-block;
-  padding: 8px;
-  background: rgba(255, 255, 255, 0.1); /* light transparent */
-  backdrop-filter: blur(10px); /* frosted glass blur */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px; /* rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 15px;
+
+}
+
+.logo-reflect::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  transform: rotate(25deg);
+  animation: shine 2.5s infinite;
+  pointer-events: none;
+  border-radius: 50%;
+
+}
+
+@keyframes shine {
+  0% {
+    top: -100%;
+    left: -100%;
+  }
+  100% {
+    top: 100%;
+    left: 100%;
+  }
 }
 
 .logo-img {
-  height: 50px;
-  object-fit: contain;
+  display: block;
+  width: auto;
+  height: 60px; /* or your preferred size */
+  border-radius: 20px;
 }
 
 
@@ -1407,9 +1437,10 @@
           <span class="logo-text">Thwaba<span class="logo-accent">Documents</span></span>
           <img class="logo-igm" src="images/Thwabadocuments.png" alt="" srcset="">
         </a> -->
-        <a href="#" class="logo glass-logo">
+        <a href="#" class="logo-reflect">
           <img class="logo-img" src="images/Thwabadocuments.png" alt="THWABA DOCUMENTS Logo">
         </a>
+        
         
         
         
