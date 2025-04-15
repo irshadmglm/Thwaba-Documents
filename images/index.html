@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Thwaba Documents - Business Setup in UAE</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Lottie Animation -->
+  <script src="https://cdn.jsdelivr.net/npm/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f0fdf4, #e6f4ea);
+      color: #1b4332;
+      scroll-behavior: smooth;
+    }
+
+    /* Modern Gradient Button */
+    .btn-primary {
+      background: linear-gradient(135deg, #204364, #093854);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 15px rgb(33, 105, 118);
+      z-index: 1;
+    }
+
+    .btn-primary:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(135deg, #093854, #18404b);
+      transition: all 0.4s ease-in-out;
+      z-index: -1;
+    }
+
+    .btn-primary:hover:before {
+      width: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(18, 91, 96, 0.749);
+    }
+
+    /* Blob Button Animation */
+    .blob-btn {
+      position: relative;
+      padding: 20px 46px;
+      margin-bottom: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      transition: color 0.5s;
+      cursor: pointer;
+      border-radius: 30px;
+      z-index: 1;
+    }
+
+    .blob-btn:before {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border: 3px solid #ffffff;
+      border-radius: 30px;
+    }
+
+    .blob-btn:after {
+      content: "";
+      z-index: -2;
+      position: absolute;
+      left: 3px;
+      top: 3px;
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s 0.2s;
+      border-radius: 30px;
+    }
+
+    .blob-btn:hover {
+      color: #ffffff;
+    }
+
+    .blob-btn:hover:after {
+      
+      transition: all 0.3s;
+      left: 0;
+      top: 0;
+    }
+
+    .blob-btn__inner {
+      z-index: -1;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+    }
+
+    .blob-btn__blobs {
+      position: relative;
+      display: block;
+      height: 100%;
+      filter: url("#goo");
+    }
+
+    .blob-btn__blob {
+      position: absolute;
+      top: 2px;
+      width: 25%;
+      height: 100%;
+
+      background: #013c50;
+      border-radius: 100%;
+      transform: translate3d(0, 150%, 0) scale(1.7);
+      transition: transform 0.45s;
+    }
+
+    @supports (filter: url("#goo")) {
+      .blob-btn__blob {
+        transform: translate3d(0, 150%, 0) scale(1.4);
+      }
+    }
+
+    .blob-btn__blob:nth-child(1) {
+      left: 0%;
+      transition-delay: 0s;
+    }
+
+    .blob-btn__blob:nth-child(2) {
+      left: 30%;
+      transition-delay: 0.08s;
+    }
+
+    .blob-btn__blob:nth-child(3) {
+      left: 60%;
+      transition-delay: 0.16s;
+    }
+
+    .blob-btn__blob:nth-child(4) {
+      left: 90%;
+      transition-delay: 0.24s;
+    }
+
+    .blob-btn:hover .blob-btn__blob {
+      transform: translateZ(0) scale(1.7);
+    }
+
+    @supports (filter: url("#goo")) {
+      .blob-btn:hover .blob-btn__blob {
+        transform: translateZ(0) scale(1.4);
+      }
+    }
+
+    /* Modern Card Styles */
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      background: linear-gradient(135deg, rgba(29, 151, 108, 0.1), rgba(147, 249, 185, 0.1));
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      z-index: 0;
+    }
+
+    .card:hover:before {
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-15px) scale(1.03);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 3D Hero Background */
+   .hero-bg {
+  background: 
+    radial-gradient(circle at top left, rgba(0, 101, 144, 0.9), rgba(13, 53, 73, 0.504)),
+    url('https://png.pngtree.com/background/20210711/original/pngtree-g20-summit-simple-business-background-picture-image_1100812.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+    .hero-bg::before {
+      content: "";
+      position: absolute;
+     border-radius: 30%;
+     left: 20%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgb(4, 57, 75) 10%, transparent 60%);
+      animation: rotate 20s linear infinite;
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("");
+      opacity: 0.3;
+    }
+
+    /* Floating Animation */
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Rotating Animation */
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Assistance Section */
+    .assist-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 10%;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('https://static.vecteezy.com/system/resources/previews/048/479/467/non_2x/abstract-wave-lines-luxury-shiny-gold-color-on-black-background-futuristic-flow-of-shining-gold-line-waves-suitable-for-banners-posters-covers-brochures-flyers-websites-free-vector.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .assist-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+      animation: rotate 20s linear infinite;
+    }
+
+    .assist-content {
+      max-width: 50%;
+      z-index: 2;
+    }
+
+    .assist-content h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .assist-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .assist-content ul li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+    }
+
+    .assist-content ul li::before {
+      content: "✔️";
+      margin-right: 12px;
+      color: #ffc107;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .assist-content ul li:hover::before {
+      transform: scale(1.3);
+    }
+
+    .assist-btn {
+      padding: 12px 30px;
+      background-color: #ffc107;
+      border: none;
+      border-radius: 50px;
+      color: #000;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+    }
+
+    .assist-btn:hover {
+      background-color: #ffca28;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 193, 7, 0.6);
+    }
+
+    .assist-image {
+      max-width: 40%;
+      z-index: 2;
+    }
+
+    .assist-image img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: transform 0.5s ease;
+    }
+
+    .assist-image:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Team Section */
+    .team-section {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #f3f3f9, #e8f4ff);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-section::before {
+      content: '';
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgb(139, 182, 210) 0%, transparent 70%);
+      top: -50px;
+      left: -150px;
+      border-radius: 50%;
+    }
+
+    .team-section::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(64, 145, 108, 0.1) 0%, transparent 70%);
+      bottom: -150px;
+      right: -150px;
+      border-radius: 50%;
+    }
+
+    .team-section h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #1f1f39;
+      position: relative;
+      display: inline-block;
+    }
+
+    .team-section h2:after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #094f54, transparent);
+      bottom: -10px;
+      left: 25%;
+    }
+
+    .swiper-slide {
+      background: white;
+      border-radius: 20px;
+      padding: 30px 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      transform: translateY(0);
+    }
+
+    .swiper-slide:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .team-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      object-fit: cover;
+      border: 4px solid #e0e0e0;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .team-img:after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      right: -8px;
+      bottom: -8px;
+      border-radius: 50%;
+      border: 1px solid #094154;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .swiper-slide:hover .team-img {
+      border-color: #094654;
+      transform: scale(1.05);
+    }
+
+    .swiper-slide:hover .team-img:after {
+      opacity: 1;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 0.2;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+    }
+
+    .member-name {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #222;
+      position: relative;
+      display: inline-block;
+    }
+
+    .member-role {
+      color: #093f54;
+      margin-bottom: 15px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .stars {
+      color: #fbc02d;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .stars:before, .stars:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 30px;
+      background: #e0e0e0;
+      top: 50%;
+    }
+
+    .stars:before {
+      left: -40px;
+    }
+
+    .stars:after {
+      right: -40px;
+    }
+
+    .member-description {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Navigation buttons */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #094254;
+      background: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background: #094054;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 18px;
+    }
+
+    .swiper-pagination-bullet {
+      background: #093f54;
+      opacity: 0.5;
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+      background: #094754;
+      transform: scale(1.2);
+    }
+
+    /* Modern Menu Toggle Animation */
+    .hamburger {
+      cursor: pointer;
+      width: 30px;
+      height: 20px;
+      position: relative;
+      margin: 0px;
+    }
+
+    .hamburger span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background-color: white;;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+    }
+
+    .hamburger span:nth-child(1) {
+      top: 0px;
+    }
+
+    .hamburger span:nth-child(2), .hamburger span:nth-child(3) {
+      top: 9px;
+    }
+
+    .hamburger span:nth-child(4) {
+      top: 18px;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      top: 9px;
+      width: 0%;
+      left: 50%;
+    }
+
+    .hamburger.open span:nth-child(2) {
+      transform: rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+
+    .hamburger.open span:nth-child(4) {
+      top: 9px;
+      width: 0%;
+      left: 50%;
+    }
+
+    /* Mobile Menu Animation */
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    }
+
+    #mobile-menu.show {
+      max-height: 1000px;
+      transition: max-height 1s ease-in-out;
+    }
+
+    /* Navbar Animation */
+    .navbar-scrolled {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      background: rgba(5, 44, 58, 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer Animations */
+    .footer-link {
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #ffc107;
+      transition: width 0.3s ease;
+    }
+
+    .footer-link:hover:after {
+      width: 100%;
+    }
+
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-5px);
+      color: #ffc107;
+    }
+
+    /* Contact Form Animation */
+    .form-input {
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .form-input:focus {
+      border-color: #093854;
+      box-shadow: 0 0 0 3px rgb(39, 118, 126);
+      transform: translateY(-2px);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .counter {
+      transition: all 0.3s ease-out;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Loader -->
+  <div class="fixed inset-0 flex items-center justify-center bg-white z-50" id="loader">
+    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_j1adxtyb.json" background="transparent" speed="1"
+      style="width: 150px; height: 150px;" loop autoplay></lottie-player>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="fixed w-full top-0 left-0 z-50 transition-all duration-500" id="navbar">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <!-- Logo -->
+      <div class="text-2xl font-bold text-gray-100 flex items-center gap-2">
+        <img src="https://img.icons8.com/color/48/000000/company.png" alt="Logo" class="w-8 h-8" />
+        Thwaba Documents
+      </div>
+
+      <!-- Menu -->
+      <nav class="hidden md:flex space-x-8 text-gray-100 font-medium">
+        <a href="#home" class="hover:text-sky-600 transition duration-300 relative nav-link">
+          Home
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-sky-600 transition-all duration-300"></span>
+        </a>
+        <a href="#services" class="hover:text-sky-600 transition duration-300 relative nav-link">
+          Services
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-sky-600 transition-all duration-300"></span>
+        </a>
+        <a href="about.html" class="hover:text-sky-600 transition duration-300 relative nav-link">
+          About
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-sky-600 transition-all duration-300"></span>
+        </a>
+        <a href="#contact" class="hover:text-sky-600 transition duration-300 relative nav-link">
+          Contact
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-sky-600 transition-all duration-300"></span>
+        </a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden md:block">
+        <a href="#get-started" class="btn-primary">Get Started</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center" >
+        <button id="menu-toggle" class="focus:outline-none hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden bg-sky-50 shadow-md">
+      <a href="#home" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-700 transition-all duration-300">Home</a>
+      <a href="#services" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-700 transition-all duration-300">Services</a>
+      <a href="#about" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-700 transition-all duration-300">About</a>
+      <a href="#contact" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-700 transition-all duration-300">Contact</a>
+
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="h-screen flex items-center justify-center text-center hero-bg relative">
+    <div data-aos="fade-up" class="max-w-2xl text-white z-10">
+      <!-- <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-xl">Start Your Business in UAE<br />With Ease & Confidence</h1>
+      <p class="text-lg mb-8 drop-shadow-md">We help you navigate the process smoothly. Fast, transparent, and reliable service for your success.</p>
+       -->
+      <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-xl">Thwaba Documents</h1>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <!-- <a href="#contact" class="btn-primary inline-block">Get Started</a> -->
+        
+        <div class="buttons">
+          <button class="blob-btn">
+            Learn More
+            <span class="blob-btn__inner">
+              <span class="blob-btn__blobs">
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+                <span class="blob-btn__blob"></span>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+          </filter>
+        </defs>
+      </svg>
+    </div>
+    
+    <!-- Floating elements animation -->
+    <div class="absolute top-1/4 left-1/4 w-12 h-12 bg-white opacity-10 rounded-full float" style="animation-delay: 0s;"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-16 h-16 bg-white opacity-10 rounded-full float" style="animation-delay: 1s;"></div>
+    <div class="absolute top-1/3 right-1/3 w-8 h-8 bg-white opacity-10 rounded-full float" style="animation-delay: 2s;"></div>
+  </section>
+  <section class="flex flex-col-reverse md:flex-row items-center justify-between px-6 py-16 md:py-24 container mx-auto space-y-10 md:space-y-0">
+
+    <!-- Text Content -->
+    <div class="w-full md:w-1/2 space-y-4">
+      <p class="text-blue-600 font-semibold">Local & International Businesses</p>
+      <h1 class="text-3xl md:text-4xl font-extrabold leading-snug text-gray-900">
+        Facilitating seamless business services in Dubai for Individuals
+      </h1>
+      <p class="text-gray-600 text-base md:text-lg">
+        Classic Pro Documents Clearing Services is a prominent company based in Dubai, United Arab Emirates. 
+        Established in 2011 with a passion for facilitating seamless business operations, 
+        <strong>10+ branches enclosed all over the UAE, 13+ years of experience, and 20+ freezone partnership.</strong>
+      </p>
+      <p class="text-gray-600 text-base md:text-lg">
+        We specialize in offering a wide array of essential services for both local and international 
+        business professionals who possess in-depth knowledge of UAE laws, regulations, and business practices, 
+        enabling us to deliver comprehensive solutions that cater to diverse business needs.
+      </p>
+    </div>
+  
+    <!-- Image & Counter -->
+    <div class="w-full md:w-1/2 relative flex justify-center items-center">
+      <img src="https://png.pngtree.com/thumb_back/fh260/background/20230717/pngtree-collaborative-endeavors-two-businessmen-shaking-hands-in-partnership-signing-agreements-and-image_3895658.jpg" alt="Business meeting" class="rounded-lg shadow-lg float w-full h-auto object-cover max-w-md">
+  
+      <!-- Counter Box -->
+      <div class="absolute bottom-4 left-4 bg-blue-900 text-white p-4 rounded-lg shadow-lg text-center">
+        <div class="text-2xl font-bold counter" id="counter">0</div>
+        <div class="text-sm">Satisfied Clients</div>
+      </div>
+    </div>
+  
+  </section>
+  
+  <script>
+    let count = 0;
+    let target = 6800;
+    const counterElement = document.getElementById('counter');
+  
+    function updateCounter() {
+      const increment = Math.ceil((target - count) / 20);
+      if (count < target) {
+        count += increment;
+        counterElement.textContent = count.toLocaleString();
+        requestAnimationFrame(updateCounter);
+      } else {
+        counterElement.textContent = target.toLocaleString() + '+';
+      }
+    }
+  
+    updateCounter();
+  </script>
+  
+  <!-- Services Section -->
+  <section id="services" class="py-20 px-6 bg-gradient-to-r from-sky-50 to-sky-100">
+    <div class="text-center mb-16">
+      <h2 class="section-title" data-aos="fade-up">Our Services</h2>
+      <p class="text-gray-600" data-aos="fade-up" data-aos-delay="100">Everything you need to set up your business hassle-free.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+      <div class="card p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="relative w-20 h-20 mx-auto mb-6 bg-sky-100 rounded-full flex items-center justify-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Company Registration" class="w-12 h-12 transition-all duration-300 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-sky-200 rounded-full animate-ping opacity-30" style="animation-duration: 3s;"></div>
+        </div>
+        <h3 class="text-xl font-semibold mb-3 text-sky-800">Company Registration</h3>
+        <p class="text-gray-600">Quick and easy company registration services tailored to your needs.</p>
+        <div class="mt-4 opacity-0 transition-all duration-300 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0">
+          <a href="#" class="text-sky-600 font-medium hover:text-sky-800 inline-flex items-center">
+            Learn More
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="card p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="relative w-20 h-20 mx-auto mb-6 bg-sky-100 rounded-full flex items-center justify-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/2913/2913462.png" alt="Visa Processing" class="w-12 h-12 transition-all duration-300 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-sky-200 rounded-full animate-ping opacity-30" style="animation-duration: 3s; animation-delay: 0.5s;"></div>
+        </div>
+        <h3 class="text-xl font-semibold mb-3 text-sky-800">Visa Processing</h3>
+        <p class="text-gray-600">End-to-end support for visa applications and renewals.</p>
+        <div class="mt-4 opacity-0 transition-all duration-300 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0">
+          <a href="#" class="text-sky-600 font-medium hover:text-sky-800 inline-flex items-center">
+            Learn More
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="card p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+        <div class="relative w-20 h-20 mx-auto mb-6 bg-sky-100 rounded-full flex items-center justify-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/3145/3145765.png" alt="Legal Consultation" class="w-12 h-12 transition-all duration-300 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-sky-200 rounded-full animate-ping opacity-30" style="animation-duration: 3s; animation-delay: 1s;"></div>
+        </div>
+        <h3 class="text-xl font-semibold mb-3 text-sky-800">Legal Consultation</h3>
+        <p class="text-gray-600">Expert legal advice to ensure compliance and peace of mind.</p>
+        <div class="mt-4 opacity-0 transition-all duration-300 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0">
+          <a href="#" class="text-sky-600 font-medium hover:text-sky-800 inline-flex items-center">
+            Learn More
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+      <h2 class="section-title">About Us</h2>
+      <p class="text-gray-700 text-lg leading-relaxed">Thwaba Documents is your trusted partner for starting and managing your business in the UAE. With years of experience and a team of experts, we simplify complex procedures and make your entrepreneurial journey smooth and successful.</p>
+    </div>
+  </section>
+  
+  <!-- Team Section -->
+  <section class="team-section" id="team">
+    <h2 data-aos="fade-up">Meet Our Team</h2>
+    <div class="swiper mySwiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQARJWMF3bKXqWdynycnD3PCa6Q5fa9uKVkGg&s" alt="Rashid Palara" class="team-img">
+          <div class="member-name">Rashid Palara</div>
+          <div class="member-role">Accounts Manager</div>
+          <div class="stars">
+            ★★★★★
+          </div>
+          <p class="member-description">
+            Your trusted partner for expert PRO services, delivering tailored solutions with precision and care.
+          </p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbeZWtodylvTjpICH_oRcN6MORYYRogtXPCH5B8sQc3o3IroxBZdHyJpWAie_vcWZz-RI&usqp=CAU" alt="Ansar Palat" class="team-img">
+          <div class="member-name">Ansar Palat</div>
+          <div class="member-role">Business Consultant</div>
+          <div class="stars">
+            ★★★★★
+          </div>
+          <p class="member-description">
+            A seasoned business consultant with a proven track record. With 3 years of experience in business operations.
+          </p>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrAqt5Ys7cpiQpQ-UuC6WB5S97P1WDqr1Imm1nd21KOGS2ysk-DhrXB1uaVnbqKB9VrDU&usqp=CAU" alt="Mohammed Ali" class="team-img">
+          <div class="member-name">Mohammed Ali</div>
+          <div class="member-role">Legal Advisor</div>
+          <div class="stars">
+            ★★★★★
+          </div>
+          <p class="member-description">
+            Expert in UAE business law with extensive knowledge of regulations and compliance requirements.
+          </p>
+        </div>
+        
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYgWONtcwSQUxFT76LRxJMNeIirAwTo-BAdqRgYj3WbXmFlUnvjGhWVrE0R0tb_OHhqwM&usqp=CAU" alt="Sarah Khan" class="team-img">
+          <div class="member-name">Sarah Khan</div>
+          <div class="member-role">Client Relations</div>
+          <div class="stars">
+            ★★★★★
+          </div>
+          <p class="member-description">
+            Dedicated to ensuring exceptional client experiences with personalized attention to every detail.
+          </p>
+        </div>
+        <!-- Slide 5 -->
+        <div class="swiper-slide">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYgWONtcwSQUxFT76LRxJMNeIirAwTo-BAdqRgYj3WbXmFlUnvjGhWVrE0R0tb_OHhqwM&usqp=CAU" alt="Sarah Khan" class="team-img">
+          <div class="member-name">Sarah Khan</div>
+          <div class="member-role">Client Relations</div>
+          <div class="stars">
+            ★★★★★
+          </div>
+          <p class="member-description">
+            Dedicated to ensuring exceptional client experiences with personalized attention to every detail.
+          </p>
+        </div>
+      </div>
+
+      <!-- Navigation buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- Our Branches Section -->
+  <section class="py-16 bg-gradient-to-r from-sky-50 to-sky-100" id="branches">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Title & Subtitle -->
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 relative inline-block">
+          Our Branches
+          <span class="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-transparent via-sky-500 to-transparent"></span>
+        </h2>
+        <p class="text-gray-600 max-w-xl mx-auto">
+          Classic Pro has multiple branches across the UAE, strategically located to provide efficient and accessible PRO services to businesses and individuals.
+        </p>
+      </div>
+
+      <!-- Swiper Container -->
+      <div class="swiper branchSwiper" data-aos="fade-up" data-aos-delay="100">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide flex justify-center items-center">
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 w-full max-w-xs">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAs-4OCh7qSe_gKUVxt3QFs9JS2h0VBs9qpg&s"
+                alt="Al Manar"
+                class="object-contain h-16 mx-auto mb-4"
+              />
+              <h3 class="text-lg font-semibold text-center text-sky-800">Al Manar</h3>
+              <p class="text-sm text-gray-600 text-center mt-2">Dubai Business District</p>
+            </div>
+          </div>
+          
+          <div class="swiper-slide flex justify-center items-center">
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 w-full max-w-xs">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVtyZB_As9fE385j0PO8xiEPvmFlY0eg2SzZgWLC3wpTEMHAJf2vbQ5TSOS5lfE0QfHSs&usqp=CAU"
+                alt="Rasel Documents"
+                class="object-contain h-16 mx-auto mb-4"
+              />
+              <h3 class="text-lg font-semibold text-center text-sky-800">Rasel Documents</h3>
+              <p class="text-sm text-gray-600 text-center mt-2">Abu Dhabi Central</p>
+            </div>
+          </div>
+          
+          <div class="swiper-slide flex justify-center items-center">
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 w-full max-w-xs">
+              <img
+                src="data:image/jpeg;base64,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"
+                alt="7Emirates"
+                class="object-contain h-16 mx-auto mb-4"
+              />
+              <h3 class="text-lg font-semibold text-center text-sky-800">7Emirates</h3>
+              <p class="text-sm text-gray-600 text-center mt-2">Sharjah Main Branch</p>
+            </div>
+          </div>
+          
+          <div class="swiper-slide flex justify-center items-center">
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 w-full max-w-xs">
+              <img
+                src="data:image/png;base64,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"
+                alt="Al Saada"
+                class="object-contain h-16 mx-auto mb-4"
+              />
+              <h3 class="text-lg font-semibold text-center text-sky-800">Al Saada</h3>
+              <p class="text-sm text-gray-600 text-center mt-2">Ajman Office</p>
+            </div>
+          </div>
+          
+          <div class="swiper-slide flex justify-center items-center">
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 w-full max-w-xs">
+              <img
+                src="data:image/png;base64,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"
+                alt="Business Hub"
+                class="object-contain h-16 mx-auto mb-4"
+              />
+              <h3 class="text-lg font-semibold text-center text-sky-800">Business Hub</h3>
+              <p class="text-sm text-gray-600 text-center mt-2">Ras Al Khaimah</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="swiper-pagination mt-8"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assistance Section -->
+  <section class="assist-section mx-6 md:mx-12 my-20" data-aos="fade-up">
+    <div class="assist-content">
+      <h2 class="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl">We're Ready to Assist You</h2>
+      <ul>
+        <li class="text-white text-sm sm:text-base md:text-lg">Experienced and Knowledgeable Staff</li>
+        <li class="text-white text-sm sm:text-base md:text-lg">One stop for all your business needs</li>
+        <li class="text-white text-sm sm:text-base md:text-lg">Support 24/7 for 365 days</li>
+      </ul>
+      <a href="#" class="assist-btn text-sm sm:text-base md:text-lg">View All Services</a>
+    </div>
+    
+  </section>
+  
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-6 bg-gradient-to-r from-sky-50 to-sky-100">
+    <div class="text-center mb-16" data-aos="fade-down">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="text-gray-600">Have questions? We're here to help you!</p>
+    </div>
+    <form class="max-w-xl mx-auto space-y-6" data-aos="fade-up">
+      <div class="relative">
+        <input type="text" placeholder="Your Name" class="w-full p-4 pl-12 border border-sky-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-400 form-input" />
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-500 absolute left-3 top-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+      </div>
+      
+      <div class="relative">
+        <input type="email" placeholder="Your Email" class="w-full p-4 pl-12 border border-sky-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-400 form-input" />
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-500 absolute left-3 top-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </div>
+      
+      <div class="relative">
+        <textarea placeholder="Your Message" class="w-full p-4 pl-12 border border-sky-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-400 form-input" rows="5"></textarea>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-500 absolute left-3 top-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+      </div>
+      
+      <button type="submit" class="btn-primary w-full relative overflow-hidden group">
+        <span class="relative z-10">Send Message</span>
+        <span class="absolute top-0 left-0 w-0 h-full bg-sky-800 transition-all duration-300 group-hover:w-full"></span>
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 pt-12 pb-8 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+      
+      <!-- Brand Section -->
+      <div>
+        <img src="https://img.icons8.com/color/96/000000/company.png" alt="Classic Pro Logo" class="w-16 mb-4">
+        <h2 class="text-xl font-bold text-yellow-400 mb-3">Classic Pro</h2>
+        <p class="text-sm leading-relaxed">We are committed to support you to get your task done in a minimal amount of time.</p>
+      </div>
+  
+      <!-- Links -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-4">Links</h3>
+        <ul class="space-y-3">
+          <li><a href="#" class="hover:text-yellow-400 transition footer-link">Home</a></li>
+          <li><a href="#" class="hover:text-yellow-400 transition footer-link">About</a></li>
+          <li><a href="#" class="hover:text-yellow-400 transition footer-link">Services</a></li>
+          <li><a href="#" class="hover:text-yellow-400 transition footer-link">Business Setup</a></li>
+          <li><a href="#" class="hover:text-yellow-400 transition footer-link">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Social -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-4">Social</h3>
+        <p class="text-sm mb-4">Follow our social profiles for more updates and latest news.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+  
+      <!-- Contact -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+        <p class="flex items-center space-x-2 mb-3"><i class="fas fa-phone text-yellow-400"></i> <span>+971 54 584 9151</span></p>
+        <p class="flex items-center space-x-2 mb-3"><i class="fas fa-envelope text-yellow-400"></i> <span>infoclassic123@gmail.com</span></p>
+        <p class="flex items-start space-x-2"><i class="fas fa-map-marker-alt text-yellow-400 mt-1"></i> <span>Office no. 108, First Floor, Coastal building, Near Al Tawar Building, Al Qusais 2, Dubai, UAE</span></p>
+      </div>
+    </div>
+  
+    <!-- Divider -->
+    <div class="border-t border-gray-700 my-8"></div>
+  
+    <!-- Copyright -->
+    <div class="text-center text-sm text-gray-500">
+      &copy; 2025 Classic Pro. All rights reserved.
+    </div>
+  
+    <!-- Decorative Shapes -->
+    <div class="absolute -top-10 -left-10 w-80 h-80 bg-yellow-400 opacity-10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-10 -right-10 w-80 h-80 bg-pink-400 opacity-10 rounded-full blur-3xl"></div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1200,
+      once: true,
+    });
+
+    // Loader
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      loader.classList.add('opacity-0');
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 500);
+    });
+    
+    // Menu Toggle Animation
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('open');
+      mobileMenu.classList.toggle('show');
+    });
+    
+    // Navbar Scroll Animation
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
+    });
+    
+    // Nav Link Hover Effect
+    navLinks.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        link.querySelector('span').style.width = '100%';
+      });
+      
+      link.addEventListener('mouseleave', () => {
+        link.querySelector('span').style.width = '0';
+      });
+    });
+    
+    // Team Swiper
+    var teamSwiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      spaceBetween: 30,
+      slidesPerView: 1,
+      effect: "coverflow",
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: false,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        1280: {
+          slidesPerView: 4,
+        },
+      },
+    });
+    
+    // Branch Swiper
+    var branchSwiper = new Swiper(".branchSwiper", {
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      slidesPerView: 1,
+      spaceBetween: 30,
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        1280: {
+          slidesPerView: 4,
+        },
+      },
+    });
+  </script>
+</body>
+
+</html>

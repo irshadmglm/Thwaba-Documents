@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Classic PRO</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0f2a4e;
+            --secondary-color: #1a3a64;
+            --accent-color: #d4af37;
+            --text-color: #333;
+            --light-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #02397c 0%, #02244e 50%, #053d58 100%);
+        }
+        
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: rotate 30s linear infinite;
+            z-index: 1;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .counter-value {
+            transition: all 0.5s ease;
+        }
+        
+        .team-member {
+            position: relative;
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 70%, rgba(15, 42, 78, 0.8) 100%);
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 2;
+        }
+        
+        .team-member:hover::before {
+            opacity: 1;
+        }
+        
+        .team-member img {
+            transition: all 0.5s ease;
+        }
+        
+        .team-member:hover img {
+            transform: scale(1.05);
+        }
+        
+        .team-member .social-icons {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            transition: all 0.5s ease;
+            z-index: 3;
+        }
+        
+        .team-member:hover .social-icons {
+            bottom: 20px;
+        }
+        
+        .gold-border {
+            position: relative;
+        }
+        
+        .gold-border::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #d4af37, #f9f295, #d4af37);
+            z-index: -1;
+            animation: spin 10s linear infinite;
+        }
+        
+        .silver-border::before {
+            background: linear-gradient(45deg, #c0c0c0, #e8e8e8, #c0c0c0);
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .checkmark {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            position: relative;
+            margin-right: 10px;
+            transform: rotate(45deg);
+        }
+        
+        .checkmark::before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 9px;
+            background-color: white;
+            left: 11px;
+            top: 6px;
+        }
+        
+        .checkmark::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 5px;
+            background-color: white;
+            left: 8px;
+            top: 10px;
+            transform: rotate(90deg);
+        }
+        
+        .feature-item {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #0f2a4e, #d4af37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .contact-btn {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .contact-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.5), rgba(255, 255, 255, 0.2), rgba(212, 175, 55, 0.5));
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            transition: transform 0.5s ease-out;
+        }
+        
+        .contact-btn:hover::after {
+            transform: scaleX(1);
+        }
+        
+        /* Animated background for stats section */
+        .stats-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <span class="text-2xl font-bold text-[#0f2a4e]">Classic<span class="text-[#d4af37]">PRO</span></span>
+            </a>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-[#d4af37] transition-colors duration-300">Home</a>
+                <a href="about.html" class="text-[#d4af37] font-medium">About Us</a>
+                <a href="services.html" class="text-gray-700 hover:text-[#d4af37] transition-colors duration-300">Services</a>
+                <a href="team.html" class="text-gray-700 hover:text-[#d4af37] transition-colors duration-300">Our Team</a>
+                <a href="contact.html" class="text-gray-700 hover:text-[#d4af37] transition-colors duration-300">Contact</a>
+            </nav>
+            
+            <div class="hidden md:block">
+                <a href="contact.html" class="bg-[#0f2a4e] text-white px-6 py-2 rounded-md hover:bg-[#1a3a64] transition-colors duration-300 btn-primary">Get Started</a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+            <a href="about.html" class="block px-4 py-2 text-[#d4af37] bg-gray-50">About Us</a>
+            <a href="services.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Services</a>
+            <a href="team.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Our Team</a>
+            <a href="contact.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+            <a href="contact.html" class="block px-4 py-3 bg-[#0f2a4e] text-white text-center">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 hero-section gradient-bg text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="https://images.tpointtech.com/difference/images/difference-between-firm-and-company.png" alt="Classic PRO Team" class="rounded-lg shadow-2xl max-w-full h-auto floating">
+                </div>
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 relative">
+                        <span class="relative z-10">Classic PRO</span>
+                        <span class="absolute -bottom-2 left-0 w-20 h-1 bg-[#d4af37]"></span>
+                    </h1>
+                    <p class="text-lg mb-8 leading-relaxed">
+                        Welcome to CLASSIC PRO, your dedicated partner in simplifying the complex world of document processing and clearing. Established with a mission to alleviate the bureaucratic burdens that individuals and businesses face, we've been proudly serving our valued clients since 2013. Our team of highly experienced professionals is committed to delivering efficient, accurate, and timely document clearing services. Customer satisfaction is our top priority.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start feature-item">
+                            <span class="checkmark mt-1"></span>
+                            <span class="font-medium">Best quality support</span>
+                        </div>
+                        <div class="flex items-start feature-item">
+                            <span class="checkmark mt-1"></span>
+                            <span class="font-medium">Hassle Free Processes</span>
+                        </div>
+                        <div class="flex items-start feature-item">
+                            <span class="checkmark mt-1"></span>
+                            <span class="font-medium">Fast & Transparent</span>
+                        </div>
+                        <div class="flex items-start feature-item">
+                            <span class="checkmark mt-1"></span>
+                            <span class="font-medium">Trusted Professionals</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#services" class="inline-block bg-[#d4af37] text-[#0f2a4e] font-bold px-8 py-3 rounded-md hover:bg-[#c4a030] transition-all duration-300 btn-primary">
+                        OUR SERVICES
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 stats-section bg-[#0f2a4e] text-white relative">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center relative z-10">
+                <div class="p-8 rounded-lg bg-[#1a3a64]/50 backdrop-blur-sm transform transition-all duration-500 hover:scale-105 hover:shadow-xl" data-aos="zoom-in" data-aos-duration="800">
+                    <div class="flex justify-center">
+                        <div class="text-6xl font-bold mb-4 flex items-center">
+                            <span class="counter-value" data-target="8000">0</span>
+                            <span class="text-[#d4af37] ml-1">+</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold uppercase tracking-wider">Customers Served</h3>
+                    <div class="w-16 h-1 bg-[#d4af37] mx-auto mt-4"></div>
+                </div>
+                
+                <div class="p-8 rounded-lg bg-[#1a3a64]/50 backdrop-blur-sm transform transition-all duration-500 hover:scale-105 hover:shadow-xl" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+                    <div class="flex justify-center">
+                        <div class="text-6xl font-bold mb-4 flex items-center">
+                            <span class="counter-value" data-target="100">0</span>
+                            <span class="text-[#d4af37] ml-1">%</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold uppercase tracking-wider">Recommendation Rate</h3>
+                    <div class="w-16 h-1 bg-[#d4af37] mx-auto mt-4"></div>
+                </div>
+                
+                <div class="p-8 rounded-lg bg-[#1a3a64]/50 backdrop-blur-sm transform transition-all duration-500 hover:scale-105 hover:shadow-xl" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+                    <div class="flex justify-center">
+                        <div class="text-6xl font-bold mb-4 flex items-center">
+                            <span class="counter-value" data-target="10">0</span>
+                            <span class="text-[#d4af37] ml-1">+</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold uppercase tracking-wider">Glorious Years</h3>
+                    <div class="w-16 h-1 bg-[#d4af37] mx-auto mt-4"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animated particles -->
+        <div class="absolute top-10 left-10 w-20 h-20 bg-[#d4af37] rounded-full opacity-10 floating" style="animation-delay: 0s;"></div>
+        <div class="absolute bottom-20 right-20 w-32 h-32 bg-[#d4af37] rounded-full opacity-10 floating" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 right-1/4 w-16 h-16 bg-[#d4af37] rounded-full opacity-10 floating" style="animation-delay: 2s;"></div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#0f2a4e]">Meet Our Professional Team Members</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Meet friendly, experienced and knowledgeable team members who make individuals and businesses pleased with their qualification.
+                </p>
+                <div class="w-24 h-1 bg-[#d4af37] mx-auto mt-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Team Member 1 -->
+                <div class="team-member rounded-xl overflow-hidden shadow-lg bg-white" data-aos="fade-up" data-aos-duration="800">
+                    <div class="relative p-6 text-center">
+                        <div class="w-48 h-48 mx-auto mb-6 overflow-hidden rounded-full gold-border">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XYejgHLVSgo6qTNF5w5Q0RmdS6D0vV.png" alt="Nazzem Nalakath" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0f2a4e]">Nazzem Nalakath</h3>
+                        <p class="text-gray-600 mb-4">Manager</p>
+                        <div class="w-12 h-1 bg-[#d4af37] mx-auto mb-4"></div>
+                        <p class="text-gray-700 mb-6">Leading our operations with expertise and dedication to ensure the highest quality service for all clients.</p>
+                        
+                        <div class="social-icons">
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member rounded-xl overflow-hidden shadow-lg bg-white" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="relative p-6 text-center">
+                        <div class="w-48 h-48 mx-auto mb-6 overflow-hidden rounded-full silver-border gold-border">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XYejgHLVSgo6qTNF5w5Q0RmdS6D0vV.png" alt="Irfad K" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0f2a4e]">Irfad K</h3>
+                        <p class="text-gray-600 mb-4">Public Relation Advisor</p>
+                        <div class="w-12 h-1 bg-[#d4af37] mx-auto mb-4"></div>
+                        <p class="text-gray-700 mb-6">Building strong relationships with clients and partners to ensure smooth communication and satisfaction.</p>
+                        
+                        <div class="social-icons">
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member rounded-xl overflow-hidden shadow-lg bg-white" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="relative p-6 text-center">
+                        <div class="w-48 h-48 mx-auto mb-6 overflow-hidden rounded-full gold-border">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XYejgHLVSgo6qTNF5w5Q0RmdS6D0vV.png" alt="Rashid Palara" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0f2a4e]">Rashid Palara</h3>
+                        <p class="text-gray-600 mb-4">Accounts Manager</p>
+                        <div class="w-12 h-1 bg-[#d4af37] mx-auto mb-4"></div>
+                        <p class="text-gray-700 mb-6">Managing financial aspects with precision and ensuring transparent transactions for all our clients.</p>
+                        
+                        <div class="social-icons">
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-member rounded-xl overflow-hidden shadow-lg bg-white" data-aos="fade-up" data-aos-duration="800">
+                    <div class="relative p-6 text-center">
+                        <div class="w-48 h-48 mx-auto mb-6 overflow-hidden rounded-full gold-border">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-e9CaX0lm1aNEhPpq3vnMUbWb8JpTyp.png" alt="Ansar Palat" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0f2a4e]">Ansar Palat</h3>
+                        <p class="text-gray-600 mb-4">Business Consultant</p>
+                        <div class="w-12 h-1 bg-[#d4af37] mx-auto mb-4"></div>
+                        <p class="text-gray-700 mb-6">Providing expert business advice to help clients navigate complex regulatory environments.</p>
+                        
+                        <div class="social-icons">
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 5 -->
+                <div class="team-member rounded-xl overflow-hidden shadow-lg bg-white" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="relative p-6 text-center">
+                        <div class="w-48 h-48 mx-auto mb-6 overflow-hidden rounded-full silver-border gold-border">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-e9CaX0lm1aNEhPpq3vnMUbWb8JpTyp.png" alt="Fayis E K" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0f2a4e]">Fayis E K</h3>
+                        <p class="text-gray-600 mb-4">Business Consultant</p>
+                        <div class="w-12 h-1 bg-[#d4af37] mx-auto mb-4"></div>
+                        <p class="text-gray-700 mb-6">Specializing in strategic business planning and helping clients optimize their operations for maximum efficiency.</p>
+                        
+                        <div class="social-icons">
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 6 -->
+                <div class="team-member rounded-xl overflow-hidden shadow-lg bg-white" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="relative p-6 text-center">
+                        <div class="w-48 h-48 mx-auto mb-6 overflow-hidden rounded-full gold-border">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-e9CaX0lm1aNEhPpq3vnMUbWb8JpTyp.png" alt="Sayyid Raheef" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0f2a4e]">Sayyid Raheef</h3>
+                        <p class="text-gray-600 mb-4">Sales Executive</p>
+                        <div class="w-12 h-1 bg-[#d4af37] mx-auto mb-4"></div>
+                        <p class="text-gray-700 mb-6">Connecting clients with the right services and ensuring their needs are met with excellence and care.</p>
+                        
+                        <div class="social-icons">
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0f2a4e] text-white flex items-center justify-center hover:bg-[#d4af37] transition-colors duration-300">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="py-20 gradient-bg relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center text-white mb-10" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">We're here to help to grow your business.</h2>
+                <p class="text-2xl font-light mb-8">Feel free to get in touch with us..</p>
+                <a href="contact.html" class="inline-block bg-white text-[#0f2a4e] font-bold px-10 py-4 rounded-md hover:bg-[#d4af37] transition-all duration-300 contact-btn">
+                    CONTACT US
+                </a>
+            </div>
+        </div>
+        
+        <!-- Animated background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div class="absolute top-10 left-10 w-40 h-40 bg-sky-800 rounded-full opacity-5 pulse"></div>
+            <div class="absolute bottom-10 right-10 w-40 h-40 bg-sky-800 rounded-full opacity-1 pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-sky-900 rounded-full opacity-1 pulse" style="animation-delay: 2s;"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0f2a4e] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Classic<span class="text-[#d4af37]">PRO</span></h3>
+                    <p class="text-gray-300 mb-4">Your dedicated partner in simplifying document processing and clearing services.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-[#d4af37] transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-[#d4af37] transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-[#d4af37] transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-[#d4af37] transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-[#d4af37] transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-[#d4af37] transition-colors duration-300">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-[#d4af37] transition-colors duration-300">Services</a></li>
+                        <li><a href="team.html" class="text-gray-300 hover:text-[#d4af37] transition-colors duration-300">Our Team</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-[#d4af37] transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-[#d4af37] transition-colors duration-300">Document Processing</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#d4af37] transition-colors duration-300">Business Setup</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#d4af37] transition-colors duration-300">Visa Services</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#d4af37] transition-colors duration-300">Legal Consultation</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#d4af37] transition-colors duration-300">PRO Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-[#d4af37]"></i>
+                            <span>Office no. 108, First Floor, Coastal building, Near Al Tawar Building, Al Qusais 2, Dubai, UAE</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-[#d4af37]"></i>
+                            <span>+971 54 584 9151</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-[#d4af37]"></i>
+                            <span>info@Thwaba Documents.ae</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center">
+                <p class="text-gray-400">&copy; 2023 Classic PRO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/971545849151" class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg z-50 hover:bg-green-600 transition-all duration-300 pulse">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-24 w-12 h-12 bg-[#0f2a4e] text-white rounded-full flex items-center justify-center shadow-lg z-50 hover:bg-[#d4af37] transition-all duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init();
+        
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter-value');
+        const speed = 200; // The lower the slower
+        
+        // Function to start counter animation when element is in viewport
+        const startCounterWhenVisible = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const count = parseInt(counter.innerText);
+                    const increment = Math.trunc(target / speed);
+                    
+                    if (count < target) {
+                        counter.innerText = count + increment;
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                // Check if counter is visible
+                const counterPosition = counter.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight;
+                
+                if (counterPosition < screenPosition) {
+                    updateCount();
+                }
+            });
+        };
+        
+        // Scroll event to check when counters are visible
+        window.addEventListener('scroll', startCounterWhenVisible);
+        
+        // Also check on page load
+        window.addEventListener('load', startCounterWhenVisible);
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Sticky Header
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('py-2');
+                header.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>

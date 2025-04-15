@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thwaba Documents Business Setup</title>
+    <!-- Tailwind CSS CDN (for demo purposes only) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Optional: Tailwind CSS extended animations or custom CSS -->
+    <style>
+      /* Simple fade-in and slide-up animations using Tailwind's keyframes */
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-fade-in {
+        animation: fadeIn 1s ease-out forwards;
+      }
+      @keyframes slideUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      .animate-slide-up {
+        animation: slideUp 1s ease-out forwards;
+      }
+    </style>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-emerald-600 to-emerald-800 py-24 md:py-32">
+      <div class="container px-4 md:px-6 mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-6 animate-fade-in">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+              Empowering Your UAE Business Dreams
+            </h1>
+            <p class="text-xl text-emerald-100">
+              Fast, Reliable &amp; Professional Business Setup Services in the UAE
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/contact" class="inline-block bg-white text-emerald-800 hover:bg-emerald-50 px-6 py-3 rounded-lg text-lg">
+                Get Started
+                <!-- Arrow Right Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="/services" class="inline-block border border-white text-white hover:bg-white/10 px-6 py-3 rounded-lg text-lg">
+                Our Services
+              </a>
+            </div>
+          </div>
+          <div class="hidden md:flex justify-center">
+            <!-- Replace with an actual animated illustration or image -->
+            <img src="hero-animation-placeholder.jpg" alt="Hero Animation" class="w-full" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container px-4 md:px-6 mx-auto">
+        <div class="text-center mb-12 animate-slide-up">
+          <h2 class="text-3xl md:text-4xl font-bold text-emerald-800 mb-4">Why Choose Thwaba Documents?</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Our goal is to ensure that your business journey in the UAE is as smooth and successful as possible.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1: Expert Guidance -->
+          <div class="border-none shadow-lg hover:shadow-xl transition-shadow rounded-lg p-6 animate-fade-in" style="animation-delay: 0.1s;">
+            <div class="mb-4">
+              <!-- CheckCircle Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-emerald-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <h3 class="text-xl text-emerald-800">Expert Guidance</h3>
+            </div>
+            <p class="text-gray-600 text-base">
+              Our consultants provide tailored advice to ensure your business setup aligns with UAE regulations and your goals.
+            </p>
+          </div>
+          <!-- Card 2: Hassle-Free Process -->
+          <div class="border-none shadow-lg hover:shadow-xl transition-shadow rounded-lg p-6 animate-fade-in" style="animation-delay: 0.2s;">
+            <div class="mb-4">
+              <!-- FileText Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-emerald-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10M7 11h10M7 15h10M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z" />
+              </svg>
+              <h3 class="text-xl text-emerald-800">Hassle-Free Process</h3>
+            </div>
+            <p class="text-gray-600 text-base">
+              From documentation to approvals, we handle every step, saving you time and effort.
+            </p>
+          </div>
+          <!-- Card 3: Trusted Partner -->
+          <div class="border-none shadow-lg hover:shadow-xl transition-shadow rounded-lg p-6 animate-fade-in" style="animation-delay: 0.3s;">
+            <div class="mb-4">
+              <!-- Users Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-emerald-600 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m4-2a4 4 0 11-8 0 4 4 0 018 0zm6 4a4 4 0 110-8 4 4 0 010 8z" />
+              </svg>
+              <h3 class="text-xl text-emerald-800">Trusted Partner</h3>
+            </div>
+            <p class="text-gray-600 text-base">
+              We have successfully assisted hundreds of clients in turning their business dreams into reality.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Preview Section -->
+    <section class="py-16 md:py-24 bg-emerald-50">
+      <div class="container px-4 md:px-6 mx-auto">
+        <div class="text-center mb-12 animate-slide-up">
+          <h2 class="text-3xl md:text-4xl font-bold text-emerald-800 mb-4">Our Services</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Comprehensive business setup solutions tailored to your needs
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Service Card 1: Company Formation -->
+          <div class="border-none shadow-lg hover:shadow-xl transition-shadow rounded-lg p-6 animate-fade-in" style="animation-delay: 0.1s;">
+            <!-- Globe Icon (replace with appropriate SVG) -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-emerald-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zM2 12h20M12 2a15.3 15.3 0 010 20" />
+            </svg>
+            <h3 class="text-xl text-emerald-800 mb-2">Company Formation</h3>
+            <p class="text-gray-600 text-base">
+              Expert guidance to establish your business in mainland, free zone, or offshore locations across the UAE.
+            </p>
+          </div>
+          <!-- Service Card 2: Visa Services -->
+          <div class="border-none shadow-lg hover:shadow-xl transition-shadow rounded-lg p-6 animate-fade-in" style="animation-delay: 0.2s;">
+            <!-- Users Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-emerald-600 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m4-2a4 4 0 11-8 0 4 4 0 018 0zm6 4a4 4 0 110-8 4 4 0 010 8z" />
+            </svg>
+            <h3 class="text-xl text-emerald-800 mb-2">Visa Services</h3>
+            <p class="text-gray-600 text-base">
+              Complete visa processing for investors, employees, and family members ensuring smooth immigration compliance.
+            </p>
+          </div>
+          <!-- Service Card 3: PRO Services -->
+          <div class="border-none shadow-lg hover:shadow-xl transition-shadow rounded-lg p-6 animate-fade-in" style="animation-delay: 0.3s;">
+            <!-- FileText Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-emerald-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10M7 11h10M7 15h10M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z" />
+            </svg>
+            <h3 class="text-xl text-emerald-800 mb-2">PRO Services</h3>
+            <p class="text-gray-600 text-base">
+              Professional document clearing, approvals, and PRO services to streamline your business operations.
+            </p>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <a href="/services" class="inline-block bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-3 rounded-lg text-lg">
+            View All Services
+            <!-- Arrow Right Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-emerald-700 to-emerald-900 text-white">
+      <div class="container px-4 md:px-6 mx-auto">
+        <div class="max-w-3xl mx-auto text-center animate-fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Business in the UAE?</h2>
+          <p class="text-xl text-emerald-100 mb-8">
+            Our team of experts is ready to guide you through every step of the process.
+          </p>
+          <a href="/contact" class="inline-block bg-white text-emerald-800 hover:bg-emerald-50 px-6 py-3 rounded-lg text-lg">
+            Contact Us Today
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
