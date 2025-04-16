@@ -110,7 +110,8 @@
   position: relative;
   display: inline-block;
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 10px;
+
 
 }
 
@@ -120,17 +121,16 @@
   top: -100%;
   left: -100%;
   width: 200%;
-  height: 200%;
+  height: 100%;
   background: linear-gradient(
     120deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.5) 50%,
-    rgba(255, 255, 255, 0.1) 100%
+    rgba(0, 29, 43, 0.1) 0%,
+    rgba(247, 246, 246, 0.153) 50%,
+    rgba(0, 29, 43, 0.1) 100%
   );
-  transform: rotate(25deg);
+  transform: rotate(150deg);
   animation: shine 2.5s infinite;
   pointer-events: none;
-  border-radius: 50%;
 
 }
 
@@ -148,7 +148,7 @@
 .logo-img {
   display: block;
   width: auto;
-  height: 60px; /* or your preferred size */
+  height: 35px; 
   border-radius: 20px;
 }
 
@@ -1236,11 +1236,11 @@
     /* WhatsApp Button */
     .whatsapp-btn {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 65px;
-      height: 65px;
-      background-color: #25d366;
+      bottom: 25px;
+      right: 25px;
+      width: 60px;
+      height: 60px;
+      background-color: #00cd30;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -1250,6 +1250,7 @@
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
       z-index: 99;
       transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      text-decoration: none;
     }
 
     .whatsapp-btn:hover {
@@ -1261,7 +1262,7 @@
     .back-to-top {
       position: fixed;
       bottom: 30px;
-      right: 110px;
+      left: 40px;
       width: 55px;
       height: 55px;
       background-color: var(--primary-color);
@@ -1276,6 +1277,7 @@
       opacity: 0;
       visibility: hidden;
       transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      text-decoration: none;
     }
 
     .back-to-top.active {
@@ -1437,8 +1439,8 @@
           <span class="logo-text">Thwaba<span class="logo-accent">Documents</span></span>
           <img class="logo-igm" src="images/Thwabadocuments.png" alt="" srcset="">
         </a> -->
-        <a href="#" class="logo-reflect">
-          <img class="logo-img" src="images/Thwabadocuments.png" alt="THWABA DOCUMENTS Logo">
+        <a href="#home" class="logo-reflect">
+          <img class="logo-img" src="images/thwaba2.png" alt="THWABA DOCUMENTS Logo">
         </a>
         
         
@@ -1910,7 +1912,7 @@
             </div>
             <div class="contact-text">
               <h4>Phone Number</h4>
-              <p><a href="tel:+971545849151">+971 54 584 9151</a></p>
+              <p><a href="tel:+971545849151">+971 58 126 5924</a></p>
             </div>
           </div>
           
@@ -1920,7 +1922,7 @@
             </div>
             <div class="contact-text">
               <h4>Email Address</h4>
-              <p><a href="mailto:shameel123@gmail.com">shameel123@gmail.com</a></p>
+              <p><a href="mailto:thwabainfo@gmail.com">thwabainfo@gmail.com</a></p>
             </div>
           </div>
           
@@ -1973,7 +1975,10 @@
     <div class="container">
       <div class="footer-content">
         <div>
-          <a href="#" class="footer-logo">Thwaba<span style="color: var(--accent-color);">Documents</span></a>
+          <!-- <a href="#" class="footer-logo">Thwaba<span style="color: var(--accent-color);">Documents</span></a> -->
+          <a href="#home" class="logo-reflect">
+            <img class="logo-img" src="images/thwaba2.png" alt="THWABA DOCUMENTS Logo">
+          </a>
           <p class="footer-text">Your dedicated partner in simplifying the complex world of business setup and document processing in the UAE.</p>
           <div class="footer-social">
             <a href="#" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
@@ -1997,11 +2002,18 @@
         <div>
           <h3 class="footer-title">Our Services</h3>
           <ul class="footer-links">
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Thwaba Registration</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Visa Processing</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Legal Consultation</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Document Clearing</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Documents Services</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Complete PRO services</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Medical and Emirates ID Typing</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Municipality and RTA services</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> All certificates attestation</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Immigration & All kinds of visas</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i>  AMER services</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i>  Local sponsor</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Trade license renewal & Ejari </a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i>  Banking consultancy</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Legal  Translation  </a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Approvals </a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> company formation</a></li>
           </ul>
         </div>
         
@@ -2030,7 +2042,7 @@
               <i class="fas fa-envelope"></i>
             </div>
             <div class="footer-contact-text">
-              shamee123@gmail.com
+              thwabainfo@gmail.com
             </div>
           </div>
         </div>
@@ -2039,7 +2051,7 @@
     
     <div class="footer-bottom">
       <div class="container">
-        <p class="footer-copyright">&copy; 2025 nnnnnn. All rights reserved.</p>
+        <p class="footer-copyright">&copy; 2025 Thwaba Documents. All rights reserved.</p>
       </div>
     </div>
   </footer>
