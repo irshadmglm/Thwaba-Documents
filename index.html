@@ -1232,31 +1232,141 @@
       color: rgba(255, 255, 255, 0.7);
       font-size: 1rem;
     }
+/* WhatsApp Floating Button */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: #1bc75a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.8rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
 
-    /* WhatsApp Button */
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      width: 60px;
-      height: 60px;
-      background-color: #00cd30;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 1.8rem;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-      z-index: 99;
-      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-      text-decoration: none;
-    }
+.whatsapp-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
 
-    .whatsapp-btn:hover {
-      transform: scale(1.15) rotate(10deg);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    }
+/* WhatsApp Popup */
+.whatsapp-popup {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 330px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  display: none;
+  flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+  z-index: 1001;
+  border: 1px solid #e0e0e0;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.whatsapp-header {
+  background-color: #25ae3e;
+  color: #fff;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.whatsapp-header i {
+  font-size: 1.8rem;
+}
+
+.header-text strong {
+  font-size: 1rem;
+}
+
+.header-text small {
+  font-size: 0.8rem;
+  color: #e8f5e9;
+}
+
+.reply-time {
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  color: #555;
+  background-color: #fafafa;
+  border-bottom: 1px solid #eee;
+}
+
+/* Chat Box */
+.chat-box {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #fff;
+  transition: background-color 0.3s;
+}
+
+.chat-box:hover {
+  background-color: #f1fdf6;
+}
+
+.chat-box div {
+  flex-grow: 1;
+}
+
+.chat-box strong {
+  font-size: 0.95rem;
+  display: block;
+}
+
+.chat-box small {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.chat-box i {
+  color: #25d366;
+  font-size: 1.4rem;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 1.5rem;
+  color: #f0f0f0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #ffffff;
+}
 
     /* Back to Top Button */
     .back-to-top {
@@ -1481,8 +1591,8 @@
         <h1 class="hero-title">Elevate Your <span class="gradient-text">Business Vision</span></h1>
         <p class="hero-subtitle">Start your business in UAE with ease and confidence. We help you navigate the process with fast, transparent, and reliable service for your success.</p>
         <div class="hero-btns">
-          <a href="#services" class="btn-primary">Our Services</a>
-          <a href="#contact" class="btn-primary btn-secondary">Contact Us</a>
+          <a href="#services" class="btn-primary logo-reflect">Our Services</a>
+          <a href="#contact" class="btn-primary btn-secondary logo-reflect">Contact Us</a>
         </div>
       </div>
     </div>
@@ -2055,11 +2165,33 @@
       </div>
     </div>
   </footer>
+<!-- WhatsApp Button -->
+<a href="#" class="whatsapp-btn logo-reflect" id="whatsappToggle">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/971566715453" class="whatsapp-btn" target="_blank">
+<!-- WhatsApp Chat Popup -->
+<div class="whatsapp-popup" id="whatsappPopup">
+  <span class="close-btn" id="closePopup">&times;</span>
+  <div class="whatsapp-header">
+    <i class="fab fa-whatsapp"></i>
+    <div class="header-text">
+      <strong>Start a Conversation</strong><br>
+      <small>Hi! Click one of our members below to chat on <strong>WhatsApp</strong></small>
+    </div>
+  </div>
+  <p class="reply-time">The team typically replies in a few minutes.</p>
+  <a href="https://wa.me/971581265924" target="_blank" class="chat-box">
+    <!-- <img src="images/agent-icon.png" alt="Customer Care" /> -->
+    <div>
+      <strong>Customer Care</strong>
+      <small>Customer Support</small>
+    </div>
     <i class="fab fa-whatsapp"></i>
   </a>
+</div>
+
+
 
   <!-- Back to Top Button -->
   <a href="#" class="back-to-top" id="back-to-top">
@@ -2257,6 +2389,27 @@
       alert('Thank you for your message! We will get back to you soon.');
       this.reset();
     });
+
+
+    const toggle = document.getElementById('whatsappToggle');
+  const popup = document.getElementById('whatsappPopup');
+  const closeBtn = document.getElementById('closePopup');
+
+  toggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+  });
+
+  closeBtn.addEventListener('click', function () {
+    popup.style.display = 'none';
+  });
+
+  // Optional: close when clicking outside the box
+  document.addEventListener('click', function (e) {
+    if (!popup.contains(e.target) && !toggle.contains(e.target)) {
+      popup.style.display = 'none';
+    }
+  });
   </script>
 </body>
 
